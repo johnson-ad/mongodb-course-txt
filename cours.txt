@@ -6,3 +6,6 @@
 	db.dropDatabase();
 	NB: sa supprime la db dans laquelle on se trouve
 
+3-Help:
+	db.help();
+	NB: pour avoir tout les commandes
