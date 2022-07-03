@@ -1,0 +1,5 @@
+1-Creation de db:
+	use + nomDB; 
+	NB : sa cree la db si elle n'existe pas et si elle existe sa stwich directement
+
+2-Supprimer un db:
