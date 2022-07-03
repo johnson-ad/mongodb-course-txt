@@ -3,3 +3,6 @@
 	NB : sa cree la db si elle n'existe pas et si elle existe sa stwich directement
 
 2-Supprimer un db:
+	db.dropDatabase();
+	NB: sa supprime la db dans laquelle on se trouve
+
