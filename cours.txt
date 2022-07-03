@@ -37,7 +37,15 @@
 	
 	db.nomCollection.insert( nomDocument );  // ici nomDocument cest student
 
-
+11-Insertion de document plus complexe:
+	ex: students = [
+		{ "frist-name" : "Johnson", "last-name": "Adolphe", "email":"email@email.com", "gender": "M", "country": "Senegal", "isStudentActive": false, "favouriteSubjects":["maths","english","it"], "totalSpentInBooks":0.00},
+		{ "frist-name" : "Jane", "last-name": "Johnson", "email":"email@email.com", "gender": "F", "country": "Congo", "isStudentActive": true, "favouriteSubjects":["maths","english","it"], "totalSpentInBooks":10.00},
+		{ "frist-name" : "Jack", "last-name": "Carter", "email":"email@email.com", "gender": "M", "country": "New-York", "isStudentActive": false, "favouriteSubjects":["maths","english","it"], "totalSpentInBooks":20.00},
+		{ "frist-name" : "Jason", "last-name": "Parker", "email":"email@email.com", "gender": "M", "country": "Brithon", "isStudentActive": true, "favouriteSubjects":["maths","english","it"], "totalSpentInBooks":30.00}
+	]
+	
+	db.nomCollection.insertMany( nomDocument ); //ici cest students
 
 
 
