@@ -9,3 +9,12 @@
 3-Help:
 	db.help();
 	NB: pour avoir tout les commandes
+
+4-Collection:
+	Les collection sont comme les tables des sql
+
+5-Creer une collection:
+	db.createCollection('leNom'); //leNom <=> le nom de la table en sql
+
+6-Voir les collections creer:
+	show collections + enter
