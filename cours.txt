@@ -18,3 +18,10 @@
 
 6-Voir les collections creer:
 	show collections + enter
+
+7-Avoir les plus d'information sur une collection du genre : sa taille, son poid ...
+	db.leNomCollectionCreer.stats();
+
+8-Supprimer une collection:
+	db.NomCollection.drop();
+	
