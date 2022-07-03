@@ -39,13 +39,32 @@
 
 11-Insertion de document plus complexe:
 	ex: students = [
-		{ "frist-name" : "Johnson", "last-name": "Adolphe", "email":"email@email.com", "gender": "M", "country": "Senegal", "isStudentActive": false, "favouriteSubjects":["maths","english","it"], "totalSpentInBooks":0.00},
-		{ "frist-name" : "Jane", "last-name": "Johnson", "email":"email@email.com", "gender": "F", "country": "Congo", "isStudentActive": true, "favouriteSubjects":["maths","english","it"], "totalSpentInBooks":10.00},
-		{ "frist-name" : "Jack", "last-name": "Carter", "email":"email@email.com", "gender": "M", "country": "New-York", "isStudentActive": false, "favouriteSubjects":["maths","english","it"], "totalSpentInBooks":20.00},
-		{ "frist-name" : "Jason", "last-name": "Parker", "email":"email@email.com", "gender": "M", "country": "Brithon", "isStudentActive": true, "favouriteSubjects":["maths","english","it"], "totalSpentInBooks":30.00}
+		{ "firstName" : "Johnson", "lastName": "Adolphe", "email":"email@email.com", "gender": "M", "country": "Senegal", "isStudentActive": false, "favouriteSubjects":["maths","english","it"], "totalSpentInBooks":0.00},
+		{ "firstName" : "Jane", "lastName": "Johnson", "email":"email@email.com", "gender": "F", "country": "Congo", "isStudentActive": true, "favouriteSubjects":["maths","english","it"], "totalSpentInBooks":10.00},
+		{ "firstName" : "Jack", "lastName": "Carter", "email":"email@email.com", "gender": "M", "country": "New-York", "isStudentActive": false, "favouriteSubjects":["maths","english","it"], "totalSpentInBooks":20.00},
+		{ "firstName" : "Jason", "lastName": "Parker", "email":"email@email.com", "gender": "M", "country": "Brithon", "isStudentActive": true, "favouriteSubjects":["maths","english","it"], "totalSpentInBooks":30.00},
+		{ "firstName" : "Jane", "lastName": "King", "email":"email@email.com", "gender": "F", "country": "Congo", "isStudentActive": true, "favouriteSubjects":["maths","english","it"], "totalSpentInBooks":10.00},
+		{ "firstName" : "Jack", "lastName": "Kane", "email":"email@email.com", "gender": "M", "country": "New-York", "isStudentActive": false, "favouriteSubjects":["maths","english","it"], "totalSpentInBooks":20.00}
 	]
 	
 	db.nomCollection.insertMany( nomDocument ); //ici cest students
+
+	NB: Pour ajouter un doc on peut le faire directement dans la methode insert( {cle : valeur}) ou creer l'objet a part et le faire comme dans les exemples precedents
+
+12-Find	<=> de select en sql:	
+		pour cela on utilise la methode find()
+		ex: db.student.find({firstName:'Jane'}).pretty() // affiche touts les information document ki on pour firstName Jane 
+		NB: la methode pretty() // permet juste d'avoir une affissage format json
+
+12-1-Autre methode d'utiliser find():
+	db.student.find({firstName:'Jane'}, {firstName : 1}, {lastName : 1}).pretty() // va afficher uniquement les elmt a rechercher : ici cest firstName, lastName 
+
+
+12-2-Afficher tout  sauf celle kon a passe dans le find():
+	db.student.find({firstName:'Jane'}, {firstName : -1}, {lastName : -1}, {gender: -1}).pretty()
+
+12-3-Un autre Affissage 
+	db.student.find({firstName:'Jane'}, {firstName : 0}, {lastName : 0}).pretty()
 
 
 
