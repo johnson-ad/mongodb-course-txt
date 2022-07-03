@@ -24,4 +24,19 @@
 
 8-Supprimer une collection:
 	db.NomCollection.drop();
+
+9-Creer une collection bcp plus precis du genre a specifier la taille le poid etc..
+	db.createCollection('nomCollection', { rentrerLesValeursSpecifique } )
+	NB: pour connaitre les veleur specifique ( voir le point 7 )
+	ex:  db.createCollection('Person',{capped: true, size: 6142800, max: 3000}) // size: l'unite cest bit, max: cest le max de doc
+
+
+
+
+
+
+
+
+
+
 	
