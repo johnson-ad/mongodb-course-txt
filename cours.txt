@@ -64,8 +64,23 @@
 	db.student.find({firstName:'Jane'}, {firstName : -1}, {lastName : -1}, {gender: -1}).pretty()
 
 12-3-Un autre Affissage 
-	db.student.find({firstName:'Jane'}, {firstName : 0}, {lastName : 0}).pretty()
+	db.student.find({} , {totalSpendInBooks : 1} ).pretty()
+	NB: 1= true et 0 = false
 
+13-Update:
+	syntaxe: db.nomCollection.update( { _id : donnerID }, { $set : { key : NewValue } )
+	NB: pour avoir l'id il suffit db.student.find({firstName:'Jane'}).pretty() et apres faire comme dans l'exemles
 
+	ex: db.student.update( {_id : ObjectId("62c222d98d0cbef00093e925")}, {$set : {firstName : 'Jeny'}} ) // $set va modifier Jane par Jeny 
 
+13-1-Updat many object:
+	syntaxe: db.nomCollection.updateMany( { _id : donnerID }, { $set : { key : NewValue }, { $set : { key : NewValue } )
+
+13-2-Update and delete:
+	syntaxe: db.nomCollection.update( { _id : donnerID }, { $unset : 1 ) // unset va supprimer la data en qtion
 	
+13-3-Update bonnus:
+	$inc : { key : NewValue }  // permet d'incrementer un nbre
+	$pull : { key : NewValue }  // permet de supprimer un elnt dans un tableau
+	$push : { key : NewValue }  // permet d'ajouter un elent dans un tableau
+
