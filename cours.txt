@@ -84,3 +84,9 @@
 	$pull : { key : NewValue }  // permet de supprimer un elnt dans un tableau
 	$push : { key : NewValue }  // permet d'ajouter un elent dans un tableau
 
+14-Delete:
+	syntaxe: db.nomCollection.deleteOne( {_id : donnerID } )
+	ex: db.student.deleteOne( {_id : ObjectId("62c222d98d0cbef00093e925")} ) // va suprimer Jeny
+
+	NB: deleteMany() // permet de supprimer plusieur doc
+
