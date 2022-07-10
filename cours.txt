@@ -68,7 +68,7 @@
 	limit(nombre) // retroune le doc fonction de la limite poser
 	skip(nombre) // affiche tout sauf le nombre passer en param
 	sort() // affiche les resultats en ordre croissant ou decroissant pour cela on utilise 1 pour croissant, et -1 pour decroissant
-		ex: db.student.find({}, {firstName : 1}, {lastName : -1}, {gender: -1}).pretty()
+		ex: db.student.find({}).pretty().sort({name : 1 }) // par ordre croissant en fonction du nom
 
 13-Update:
 	syntaxe: db.nomCollection.update( { _id : donnerID }, { $set : { key : NewValue } )
