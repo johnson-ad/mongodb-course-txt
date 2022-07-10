@@ -59,13 +59,16 @@
 12-1-Autre methode d'utiliser find():
 	db.student.find({firstName:'Jane'}, {firstName : 1}, {lastName : 1}).pretty() // va afficher uniquement les elmt a rechercher : ici cest firstName, lastName 
 
-
-12-2-Afficher tout  sauf celle kon a passe dans le find():
-	db.student.find({firstName:'Jane'}, {firstName : -1}, {lastName : -1}, {gender: -1}).pretty()
-
 12-3-Un autre Affissage 
 	db.student.find({} , {totalSpendInBooks : 1} ).pretty()
 	NB: 1= true et 0 = false
+	RQ: 1 : permet de recuperer ke le doc en question et non de tout le doc
+
+12-4-Affiche avec tri:
+	limit(nombre) // retroune le doc fonction de la limite poser
+	skip(nombre) // affiche tout sauf le nombre passer en param
+	sort() // affiche les resultats en ordre croissant ou decroissant pour cela on utilise 1 pour croissant, et -1 pour decroissant
+		ex: db.student.find({}, {firstName : 1}, {lastName : -1}, {gender: -1}).pretty()
 
 13-Update:
 	syntaxe: db.nomCollection.update( { _id : donnerID }, { $set : { key : NewValue } )
@@ -89,4 +92,5 @@
 	ex: db.student.deleteOne( {_id : ObjectId("62c222d98d0cbef00093e925")} ) // va suprimer Jeny
 
 	NB: deleteMany() // permet de supprimer plusieur doc
+
 
