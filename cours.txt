@@ -93,4 +93,21 @@
 
 	NB: deleteMany() // permet de supprimer plusieur doc
 
+15-Indexation et Aggretate ( les jointure en sql ):
+	Index:
+	  Par defaut l'indexation porte sur _id, on peut ajouter d'autre indexation histoire de rendre les recherche bcp plus rapide
+	  pour cela on utilse: ensureIndex({ key: 1}) 
+		ex: db.student.ensureIndex( { name : 1}) // on aura _id et name comme index
+
+	Suprimer un index:
+		dropIndex({key : 1})
+		ex: db.student.dropIndex({ name : 1})
+
+
+	Agragation:
+		db.collectionName.aggregate({ [ ] } )
+
+		framework(pipline) : project - match - sort - skip - limit - unwind
+		expression(option) : sum - avg - min - max - push - addToSet - first - last	
+
 
