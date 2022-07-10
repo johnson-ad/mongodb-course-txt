@@ -105,7 +105,15 @@
 
 
 	Agragation:
-		db.collectionName.aggregate({ [ ] } )
+		// joining two collection
+		db.collectionName.aggregate([{
+						$lookup : {
+							from : nomDuPremierCollection,
+							localField : nomDeuxiemeCollection,
+							foreignField : " keyLaison ",
+							as : " nom alias "
+							}
+					}])
 
 		framework(pipline) : project - match - sort - skip - limit - unwind
 		expression(option) : sum - avg - min - max - push - addToSet - first - last	
