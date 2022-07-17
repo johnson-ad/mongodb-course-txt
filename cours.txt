@@ -118,4 +118,32 @@
 		framework(pipline) : project - match - sort - skip - limit - unwind
 		expression(option) : sum - avg - min - max - push - addToSet - first - last	
 
+16-Relationship:
+	=> one to one :
+ex1:
 
+const customerSchema = new mongoose.Schema({
+    name: String,
+    age: Number,
+    gender: String
+});
+
+const Customer = mongoose.model('cunstoner', customerSchema);
+
+
+const identifierSchema = new mongoose.Schema({
+    customerCode: String,
+    customer: customerSchema // on aura tout le contenu de customerSchema 
+});
+
+
+// deuxieme methode : le customer va juste pointer vers l'objet customer 
+const identifierSchema = new mongoose.Schema({
+    customerCode: String,
+    customer: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'cunstoner'
+    }
+});
+
+const Indentifier = mongoose.model('indentifier', identifierSchema);
